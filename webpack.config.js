@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // new line
 const ESLintPlugin = require('eslint-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -13,6 +14,7 @@ module.exports = {
     static: './dist'      // new line
   },
   plugins: [
+    new Dotenv(),
     new CleanWebpackPlugin(), // new line
     new ESLintPlugin({
       context: "compiler.context",
